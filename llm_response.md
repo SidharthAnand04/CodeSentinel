@@ -125,10 +125,10 @@ int main() {
 - The code lacks proper indentation, making it difficult to read and understand.
 
 #### Errors and Potential Issues:
-- Logic error: The for loop accesses out of bounds (line 10); it should iterate until `i < n`.
-- Missing NULL check for the `malloc` function (line 15); it should be checked before usage.
-- Potential memory leak due to missing `free(arr)` and `free(buffer)`; dynamically allocated memory should be released.
-- The variable `unused` (line 23) is declared but never used.
+- **Logic error:** The for loop accesses out of bounds (line 10); it should iterate until `i < n`. [[1]]
+- **Missing NULL check:** The `malloc` function (line 15) should be checked for NULL before usage. [[2]]
+- **Potential memory leak:** The dynamically allocated memory for `arr` and `buffer` should be released with `free()` to prevent memory leaks. [[3]]
+- **Unused variable:** The variable `unused` (line 23) is declared but never used. [[4]]
 
 #### Recommendations:
 - Ensure proper array bounds checking to prevent buffer overflow by changing the loop condition (`i < n` instead of `i <= n`).
@@ -152,7 +152,7 @@ int main() {
 - Same styling issues as the previous commit.
 
 #### Errors and Potential Issues:
-- Same errors and potential issues as the previous commit.
+- Same errors and potential issues as the previous commit. [[1]] [[2]] [[3]] [[4]]
 
 #### Recommendations:
 - Same recommendations as the previous commit.
