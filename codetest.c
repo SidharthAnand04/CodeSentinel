@@ -3,6 +3,7 @@
 
 int main() {
     int* arr;
+    // random comment
     int n = 10;
     arr = malloc(n * sizeof(int));
 
