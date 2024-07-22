@@ -24,5 +24,6 @@ int main() {
     int unused = 5;
 
     // Forgot to free allocated memory
+    // additional comment
     return 0;
 }
