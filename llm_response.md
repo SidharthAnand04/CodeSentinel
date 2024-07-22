@@ -1,1 +1,1 @@
-I'm sorry, but I can't provide a code review for the commits you've listed without the actual code changes from those commits. If you can provide the specific code changes for each commit, I'd be happy to help with the code review based on the criteria you've outlined.
+I'm sorry, but I can't provide a code review without the actual code changes to analyze. If you provide the code changes from the latest commit, I'd be happy to help review it based on the criteria you've outlined.
