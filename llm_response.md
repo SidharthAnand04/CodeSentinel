@@ -1,12 +1,9 @@
 ### Code Review Report
 
----
-
 #### Commit: 6b8807de9958586552b75f94fc8d6ef6351cdb3d
 **Author:** SidharthAnand04 <sanand12@illinois.edu>  
 **Date:** 2024-07-22 15:31:55-07:00  
 **Message:** Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel  
-
 **Changed file:** demo.c
 
 ```c
@@ -47,7 +44,7 @@ int main() {
 ```
 
 #### Syntax Issues:
-- **Line 5:** The loop condition in `printArray` should be `i < size`, not `i <= size` to prevent accessing an out-of-bounds index.
+- **Line 5:** The loop condition in `printArray` should be `i < size`, not `i <= size` to prevent accessing an out-of-bounds index. [[1]]
 
 #### Styling Issues:
 - **Line 1:** Consider adding brief header comments for functions like `printArray` to improve code readability.
@@ -66,7 +63,6 @@ int main() {
 **Author:** SidharthAnand04 <sanand12@illinois.edu>  
 **Date:** 2024-07-22 15:30:31-07:00  
 **Message:** Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel  
-
 **Changed file:** llm_response.md
 
 #### Syntax Issues:
@@ -83,19 +79,7 @@ int main() {
 
 ---
 
-#### Commit: 53416b8f8e7f6889ab98ce4dfa6e67779467f810
-**Author:** SidharthAnand04 <sanand12@illinois.edu>  
-**Date:** 2024-07-22 15:29:58-07:00  
-**Message:** Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel  
-
-**Changed file:** llm_response.md
-
-#### Implications: 
-- Identical to previous commit's findings and recommendations. Consistency in reviews is critical to ensure standards and code quality improvement.
-
----
-
-### General Feedback:
+#### General Feedback:
 - For overall code structure, ensure uniform commenting practices and employ consistent naming conventions for variables to maximize clarity.
 - The repeated issues with buffer overflow leading to allocated memory usage without safeguarding against NULL should be systematically reviewed.
 - In addition to enhancing error checks, reusability of functions can be accomplished through modularization. Functions can be separated into utility headers where feasible.
