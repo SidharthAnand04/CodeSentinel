@@ -1,4 +1,4 @@
-## Code Review Report
+#### Code Review Report
 
 ### Commit: `6b8807de9958586552b75f94fc8d6ef6351cdb3d`
 **Author:** SidharthAnand04 <sanand12@illinois.edu>  
@@ -119,20 +119,4 @@ int main() {
 
 ### Recommendations:
 - Change the loop condition from `i <= n` to `i < n`.
-- Validate the result of `malloc(buffer)` for `NULL` before comprehension.
-- Include `free(buffer)` right before returning from the function to avoid memory leaks.
-
----
-
-### Summary of Findings Across All Commits:
-1. **Common Issues:**
-   - Numerous off-by-one errors, leading to buffer overflows or invalid access.
-   - Missing checks for `malloc` failures may risk dereferencing NULL pointers.
-   - Unused variables, contributing to unnecessary clutter.
-
-2. **General Recommendations:**
-   - Emphasize defensive programming: validate all memory allocations.
-   - Write meaningful comments that clarify the code's intent.
-   - Regularly clean up unused variables for better performance and readability.
-
-Implementing these improvements will enhance code quality, maintainability, and overall efficiency.
+-
