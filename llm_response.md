@@ -1,12 +1,7 @@
 # Code Review Report
 
-## General Observations
-The provided code changes mostly center around C programming and documentation in Markdown files for a repository called "CodeSentinel." The feedback will highlight syntax errors, stylistic issues, logic flaws, and improvement opportunities across multiple commits.
-
----
-
-### Commit: **6b8807de9958586552b75f94fc8d6ef6351cdb3d**
-**Author:** SidharthAnand04 <sanand12@illinois.edu>  
+## Commit: **6b8807de9958586552b75f94fc8d6ef6351cdb3d**
+**Author:** SidharthAnand04<sanand12@illinois.edu>  
 **Date:** 2024-07-22 15:31:55-07:00  
 **Message:** Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel  
 **File Name:** demo.c
@@ -50,14 +45,14 @@ int main() {
 ```
 
 ### **Syntax Issues:**
-- **Line 7:** Incorrect loop condition `i <= size` should be corrected to `i < size` to prevent accessing out-of-bounds memory.
+- **Line 7:** Incorrect loop condition `i <= size` should be corrected to `i < size` to prevent accessing out-of-bounds memory. [[1]]
 
 ### **Styling Issues:**
 - The code is well-formatted, adhering to common C conventions with appropriate indentation and spacing.
 
 ### **Errors and Potential Issues:**
-- **Logic Error (Line 7):** The `for` loop should use the `<` operator instead of `<=` to prevent out-of-bounds access.
-- **Using Freed Memory (Line 19):** The code attempts to print values from `arr` after it has been freed, which leads to undefined behavior.
+- **Logic Error (Line 7):** The `for` loop should use the `<` operator instead of `<=` to prevent out-of-bounds access. [[1]]
+- **Using Freed Memory (Line 19):** The code attempts to print values from `arr` after it has been freed, which leads to undefined behavior. [[2]]
 
 ### **Recommendations:**
 - Update the loop in `printArray` to `for (int i = 0; i < size; i++)`.
@@ -65,8 +60,8 @@ int main() {
 
 ---
 
-### Commit: **3d203ae361a9341c962f3a2e4b285206dc97c68e**
-**Author:** SidharthAnand04 <sanand12@illinois.edu>  
+## Commit: **3d203ae361a9341c962f3a2e4b285206dc97c68e**
+**Author:** SidharthAnand04<sanand12@illinois.edu>  
 **Date:** 2024-07-22 15:30:31-07:00  
 **Message:** Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel  
 **File Name:** llm_response.md
@@ -79,8 +74,8 @@ The content repeats previous explanations in another commit (6b8807de...), provi
 
 ---
 
-### Commit: **de3ab26aad9211b8799cc43d45303f580a2fbdd9**
-**Author:** SidharthAnand04 <sanand12@illinois.edu>  
+## Commit: **de3ab26aad9211b8799cc43d45303f580a2fbdd9**
+**Author:** SidharthAnand04<sanand12@illinois.edu>  
 **Date:** 2024-07-22 15:29:42-07:00  
 **Message:** New file  
 **File Name:** demo.c
@@ -93,8 +88,8 @@ The code is identical to the previous commit (6b8807de...). This implies that si
 
 ---
 
-### Commit: **04b6e1bed000acb86a009ede4f0362980fcb2755**
-**Author:** SidharthAnand04 <sanand12@illinois.edu>  
+## Commit: **04b6e1bed000acb86a009ede4f0362980fcb2755**
+**Author:** SidharthAnand04<sanand12@illinois.edu>  
 **Date:** 2024-07-22 14:36:53-07:00  
 **Message:** asdafsdqert  
 **File Name:** codetest.c
@@ -135,16 +130,16 @@ int main() {
 ```
 
 ### **Syntax Issues:**
-- **Line 11:** Missing `#include <string.h>` for `strcpy`.
+- **Line 11:** Missing `#include <string.h>` for `strcpy`. [[3]]
 
 ### **Styling Issues:**
 - Comments could be improved by removing unnecessary comments and focusing on meaningful explanations.
 
 ### **Errors and Potential Issues:**
-- **Buffer Overflow (Line 11):** Loop condition `i <= n` must be changed to `i < n` to avoid exceeding the allocated array size.
-- **Missing NULL Check for malloc (Line 15):** Ensure to verify if `buffer` is NULL after allocation.
-- **Unused Variable (Line 26):** The variable `unused` is defined but never utilized.
-- **Memory Leak:** The allocated memory for `buffer` is not freed, which leads to potential memory leaks.
+- **Buffer Overflow (Line 11):** Loop condition `i <= n` must be changed to `i < n` to avoid exceeding the allocated array size. [[4]]
+- **Missing NULL Check for malloc (Line 15):** Ensure to verify if `buffer` is NULL after allocation. [[5]]
+- **Unused Variable (Line 26):** The variable `unused` is defined but never utilized. [[6]]
+- **Memory Leak:** The allocated memory for `buffer` is not freed, which leads to potential memory leaks. [[7]]
 
 ### **Recommendations:**
 - Correct the loop condition to `i < n`.
@@ -154,7 +149,7 @@ int main() {
 
 ---
 
-### General Recommendations for All Commits:
+## General Recommendations for All Commits:
 1. Ensure clear, descriptive commit messages that reflect meaningful updates or changes.
 2. Remove redundant or repetitive documentation to focus on the value of what is being presented.
 3. Refactor and correct logic errors that can lead to runtime issues, such as buffer overflow and memory management issues.
