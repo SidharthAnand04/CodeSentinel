@@ -1,6 +1,6 @@
-## Code Review Report:
+### Code Review Report:
 
-### Commit: c4d392ed948caa62be8e5c1b06442fc16f4f2b58
+#### Commit: c4d392ed948caa62be8e5c1b06442fc16f4f2b58
 - **Author:** SidharthAnand04
 - **Date:** 2024-07-22 17:01:45-05:00
 - **Message:** Update README.md
@@ -9,9 +9,7 @@
 ### Original Code:
 ```markdown
 # CodeSentinel
-
 Welcome to **CodeSentinel**, a demo repository created for testing purposes. CodeSentinel is designed to track changes in a repository, feed them into a Language Learning Model (LLM), generate a bug log, and commit this log back to the repository.
-
 ## Features
 - **Automated Change Tracking**: Monitors changes in the repository.
 - **LLM Integration**: Feeds changes into a Language Learning Model for analysis.
@@ -35,7 +33,7 @@ Welcome to **CodeSentinel**, a demo repository created for testing purposes. Cod
 
 ---
 
-### Commit: 04b6e1bed000acb86a009ede4f0362980fcb2755
+#### Commit: 04b6e1bed000acb86a009ede4f0362980fcb2755
 - **Author:** SidharthAnand04
 - **Date:** 2024-07-22 14:36:53-07:00
 - **Message:** asdafsdqert
@@ -50,20 +48,26 @@ int main() {
     int* arr;
     int n = 10;
     arr = malloc(n * sizeof(int));
+
     // Intentionally causing a buffer overflow
     for (int i = 0; i <= n; i++) {
         arr[i] = i;
     }
+
     // Missing NULL check for malloc
     char* buffer = malloc(256);
     strcpy(buffer, "This is a test string.");
+
     // Potential memory leak
     if (buffer != NULL) {
         printf("%s\n", buffer);
     }
+
     // Unused variable
     int unused = 5;
+
     // Forgot to free allocated memory
+
     return 0;
 }
 ```
@@ -80,22 +84,17 @@ int main() {
 - **Logic Error:** Buffer overflow due to the loop condition (`i <= n` allows writing to `arr[n]`, which is out of bounds).
 - **Memory Leak:** If `buffer` is not freed after usage.
 - **Undefined Behavior:** Accessing `arr[n]` can lead to undefined behavior if the allocated memory is not proper.
-  
+
 ### Recommendations:
 1. **Add NULL Checks:**
    - Ensure to check `malloc` return values for both `arr` and `buffer`.
-   
 2. **Adjust Loop:**
    - Change the loop condition to `for (int i = 0; i < n; i++)` to prevent buffer overflow.
-   
 3. **Free Allocated Memory:**
    - Include `free(arr);` and `free(buffer);` before exiting the program to prevent memory leaks.
-
 4. **Remove Unused Variables:**
    - Consider deleting the unused variable `unused`.
 
 ---
 
-The subsequent review format for other commits is similar to the above, where each commit is examined according to the specified aspects, ensuring detail is provided for syntax, styling, potential errors, and recommendations. 
-
-If you wish to have additional commits reviewed or summarized in this format, please provide the required details.
+This format will be followed for reviewing other commits as well. If you require further reviews or summaries, please provide the necessary details.
