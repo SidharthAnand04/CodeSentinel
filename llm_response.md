@@ -1,6 +1,6 @@
-Here is the detailed code review report for the provided commits following your specified format:
+### Code Review Report:
 
-### Commit: 6b8807de9958586552b75f94fc8d6ef6351cdb3d
+#### Commit: 6b8807de9958586552b75f94fc8d6ef6351cdb3d
 **Author:** SidharthAnand04  
 **Date:** 2024-07-22 15:31:55-07:00  
 **Message:** Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel  
