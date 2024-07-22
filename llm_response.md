@@ -1,10 +1,14 @@
-**Commit: 04b6e1bed000acb86a009ede4f0362980fcb2755 - asdafsdqert**
+Code Review Report:
 
-* **Author:** SidharthAnand04
-* **Date:** 2024-07-22 14:36:53-07:00
-* **Changed files:** `codetest.c`
+Commit: 04b6e1bed000acb86a009ede4f0362980fcb2755
+Author: SidharthAnand04 <sanand12@illinois.edu>
+Date: 2024-07-22 14:36:53-07:00
+Message: asdafsdqert
 
-**Original Code**
+Changed files:
+  - codetest.c
+
+Original Code:
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,8 +43,25 @@ int main() {
 }
 ```
 
-**Syntax Issues:**
+Syntax Issues:
 - No syntax errors found.
 
-**Styling Issues:**
-- Comments could be more descriptive; ideally,
+Styling Issues:
+- Comments could be more descriptive.
+- Inconsistent indentation in comments.
+
+Errors and Potential Issues:
+- Buffer overflow due to the loop condition `i <= n` instead of `i < n`.
+- Missing NULL check for the `malloc` of `buffer`.
+- Potential memory leak as memory allocated for `buffer` is not freed.
+- Unused variable `unused`.
+- Forgot to free allocated memory for `arr`.
+
+Recommendations:
+- Correct the loop condition to `i < n` to prevent buffer overflow.
+- Add a NULL check after `malloc` for `buffer`.
+- Free the allocated memory for both `arr` and `buffer` before returning from `main`.
+- Remove the unused variable `unused`.
+- Improve comments for better code readability and maintainability.
+
+Please ensure to address these issues for better code quality and reliability.
