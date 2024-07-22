@@ -1,6 +1,6 @@
-I have reviewed the provided code changes in the GitHub commits. Here is the analysis based on the criteria you provided:
+### Code Review Report:
 
-### Commit: 6b8807de9958586552b75f94fc8d6ef6351cdb3d
+#### Commit: 6b8807de9958586552b75f94fc8d6ef6351cdb3d
 **File:** demo.c
 
 #### Syntax Issues:
@@ -17,7 +17,9 @@ I have reviewed the provided code changes in the GitHub commits. Here is the ana
 - Change the loop condition in `printArray` from `i <= size` to `i < size`.
 - Avoid accessing freed memory by eliminating the code line that tries to print `arr` after freeing it.
 
-### Commit: 04b6e1bed000acb86a009ede4f0362980fcb2755
+---
+
+#### Commit: 04b6e1bed000acb86a009ede4f0362980fcb2755
 **File:** codetest.c
 
 #### Syntax Issues:
@@ -36,4 +38,4 @@ I have reviewed the provided code changes in the GitHub commits. Here is the ana
 - Update the loop condition from `i <= n` to `i < n` for safety.
 - Ensure to handle `malloc` failures and free allocated memory appropriately.
 
-If you need further assistance or clarification on any specific code changes, feel free to ask.
+If you need further clarification or assistance on any specific code changes, feel free to ask.
