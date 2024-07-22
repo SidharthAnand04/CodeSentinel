@@ -45,17 +45,17 @@ int main() {
 }
 ```
 
-### Syntax Issues:
-- **Line 7:** The loop condition `i <= size` is incorrect, it should be `i < size` to avoid an off-by-one error.
+#### Syntax Issues:
+- **Line 7:** The loop condition `i <= size` is incorrect, it should be `i < size` to avoid an off-by-one error. [[1]]
 
-### Styling Issues:
+#### Styling Issues:
 - The code is generally well-formatted and maintains proper indentation.
 
-### Errors and Potential Issues:
+#### Errors and Potential Issues:
 - **Logic Error (Line 7):** The loop condition should be changed to `i < size` to prevent accessing out-of-bounds memory. [[1]]
 - **Using Freed Memory (Line 19):** The code attempts to print the values of `arr` after it has been freed, which leads to undefined behavior. [[2]]
 
-### Recommendations:
+#### Recommendations:
 - Change the loop condition in the `printArray` function to `i < size`.
 - Remove calls to `printArray(arr, size)` after the memory has been freed.
 
@@ -115,19 +115,19 @@ int main() {
 }
 ```
 
-### Syntax Issues:
+#### Syntax Issues:
 - **Line 11:** Missing `#include <string.h>` for `strcpy`. [[3]]
 
-### Styling Issues:
+#### Styling Issues:
 - Comments are clear, though removing unnecessary comments could improve clarity.
 
-### Errors and Potential Issues:
+#### Errors and Potential Issues:
 - **Buffer Overflow (Line 11):** The loop condition `i <= n` should be `i < n` to prevent writing beyond allocated memory. [[4]]
 - **Missing NULL Check for malloc (Line 15):** There should be a NULL check after `malloc` to handle memory allocation failure. [[5]]
 - **Unused Variable (Line 26):** The variable `unused` is declared but never used. [[6]]
 - **Memory Leak (Lines 15-17):** Memory allocated with `malloc` for `buffer` is not freed. [[7]]
 
-### Recommendations:
+#### Recommendations:
 - Correct the loop condition to `i < n`.
 - Add a NULL check after allocating `buffer`.
 - Free allocated memory for `buffer` at the end of the program to prevent memory leaks.
@@ -157,7 +157,7 @@ int main() {
 
 (Original content repeats existing code reviews. No new code provided.)
 
-### Overall Recommendations:
+#### Overall Recommendations:
 - For all code pieces, ensure function comments are up to date and applicable.
 - Address commenting strategy: remove or refine unnecessary comments throughout the code for clarity.
   
