@@ -1,6 +1,6 @@
-### Code Review Report:
+## Code Review Report
 
-#### Commit: `6b8807de9958586552b75f94fc8d6ef6351cdb3d`
+### Commit: `6b8807de9958586552b75f94fc8d6ef6351cdb3d`
 **Author:** SidharthAnand04 <sanand12@illinois.edu>  
 **Date:** 2024-07-22 15:31:55-07:00  
 **Message:** Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel  
@@ -45,22 +45,22 @@ int main() {
 ```
 
 ### Syntax Issues:
-- **Line 6:** The loop condition in `printArray` should be `i < size`, not `i <= size`. This change prevents accessing an out-of-bounds index.
+- **Line 6:** The loop condition in `printArray` should be `i < size`, not `i <= size` to prevent accessing an out-of-bounds index.
 
 ### Styling Issues:
-- The code is well-formatted and follows C conventions. However, adding a header comment for the `printArray` function to describe its functionality would improve code readability.
+- The code is generally well-formatted. However, adding a header comment for the `printArray` function to describe its purpose would enhance readability.
 
 ### Errors and Potential Issues:
-- **Line 23:** Accessing `printArray(arr, size)` after `free(arr)` causes undefined behavior, as `arr` is now a dangling pointer. This is a critical issue that must be fixed immediately.
-- **Potential Memory Leak:** Although a straightforward check after `malloc` is present, ensure all errors are handled gracefully.
+- **Line 23:** Invoking `printArray(arr, size)` after `free(arr)` results in undefined behavior, since `arr` becomes a dangling pointer. This is a critical issue that must be addressed immediately.
+- **Memory Leak Potential:** Though a check for `malloc` failure is included, always ensure to handle memory exceptions gracefully.
 
 ### Recommendations:
-- Fix the loop condition in `printArray` to `i < size`.
-- Remove the line that attempts to print `arr` after it has been freed. Consider an additional check to ensure the pointer is valid before accessing it.
+- Change the loop condition in `printArray` from `i <= size` to `i < size`.
+- Eliminate the code line that tries to print `arr` after freeing it, as this leads to invalid memory access. Consider adding a condition to check if the pointer is valid before trying to access it.
 
 ---
 
-#### Commit: `3d203ae361a9341c962f3a2e4b285206dc97c68e`
+### Commit: `3d203ae361a9341c962f3a2e4b285206dc97c68e`
 **Author:** SidharthAnand04 <sanand12@illinois.edu>  
 **Date:** 2024-07-22 15:30:31-07:00  
 **Message:** Merge branch 'main' of https://github.com/SidharthAnand04/CodeSentinel  
@@ -70,7 +70,7 @@ int main() {
 
 ---
 
-#### Commit: `04b6e1bed000acb86a009ede4f0362980fcb2755`
+### Commit: `04b6e1bed000acb86a009ede4f0362980fcb2755`
 **Changed File:** `codetest.c`
 ```c
 #include <stdio.h>
@@ -109,30 +109,30 @@ int main() {
 - There are no syntax errors.
 
 ### Styling Issues:
-- Comments should be improved for clarity. Avoid vague comments such as `// random comment`.
-- Remove the unused variable `unused`, as it leads to unnecessary verbosity.
+- Comments should provide clarity and context. Avoid vague comments like `// random comment`.
+- The unused variable `unused` should be removed to maintain code clarity.
 
 ### Errors and Potential Issues:
-- **Line 10:** The loop condition `i <= n` should be `i < n` to prevent buffer overflow (accessing `arr[n]`).
-- **Line 20:** The code neglects to check if `malloc` fails before using `buffer`. Always check the return value to avoid dereferencing a `NULL` pointer.
-- **Memory Leak:** Ensure the allocated memory for `buffer` is freed before exiting the function.
+- **Line 10:** The loop condition `i <= n` must be changed to `i < n` to prevent buffer overflow by accessing `arr[n]`.
+- **Line 20:** Lack of a check for `malloc` failure before using `buffer` can lead to dereferencing a `NULL` pointer.
+- **Memory Leak Potential:** The allocated memory for `buffer` should be freed before exiting the function to avoid leaks.
 
 ### Recommendations:
-- Change `i <= n` to `i < n`.
-- Check the result of `malloc(buffer)` for `NULL` before using it.
-- Include `free(buffer)` before returning from the function to avoid memory leaks.
+- Change the loop condition from `i <= n` to `i < n`.
+- Validate the result of `malloc(buffer)` for `NULL` before comprehension.
+- Include `free(buffer)` right before returning from the function to avoid memory leaks.
 
 ---
 
 ### Summary of Findings Across All Commits:
 1. **Common Issues:**
-   - Frequent off-by-one errors can cause buffer overflows and undefined behavior.
-   - Missing checks for `malloc` failures may lead to dereferencing `NULL`, which can crash the program.
-   - Unused variables clutter the code.
+   - Numerous off-by-one errors, leading to buffer overflows or invalid access.
+   - Missing checks for `malloc` failures may risk dereferencing NULL pointers.
+   - Unused variables, contributing to unnecessary clutter.
 
 2. **General Recommendations:**
-   - Follow defensive programming practices: validate all memory allocations before usage.
-   - Use meaningful comments that clarify the code's intent.
-   - Regularly clean up unused variables to maintain code clarity and performance.
+   - Emphasize defensive programming: validate all memory allocations.
+   - Write meaningful comments that clarify the code's intent.
+   - Regularly clean up unused variables for better performance and readability.
 
-Taking these measures will improve code quality, maintainability, and overall performance. Ensure to implement these recommendations in future commits for better software development practices.
+Implementing these improvements will enhance code quality, maintainability, and overall efficiency.
